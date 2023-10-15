@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
- * printf_d_i - a function helps to print numbers with %d and %i specifiers
+ * _printf - a function helps to print numbers with %d and %i specifiers
  * @format: a pointer to the string
  * Return: the number of characters printed
  */
-int printf_d_i(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	va_list args;
 	int a = 0, char_printed = 0, prod, divisor = 1, digit;
