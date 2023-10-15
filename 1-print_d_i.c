@@ -1,6 +1,11 @@
 #include "main.h"
 #include <stdio.h>
 
+int putchars(char c)
+    {
+        return (putc(c, stdout));
+    }
+
 /**
  * printf_d_i - a function helps to print numbers with %d and %i specifiers
  * @format: a pointer to the string
@@ -24,29 +29,31 @@ int printf_d_i(const char *format, ...)
 					prod = va_arg(args, int);
 					if (prod < 0)
 					{
-						putchar_('-');
+						putchars('-');
 						prod = -prod;
 					}
 					while (prod / divisor > 9)
+					{
 						divisor = divisor * 10;
+					}
 					while (divisor != 0)
 					{
 						digit = prod / divisor;
-						putchar_('0' + digit);
+						putchars('0' + digit);
 						prod = prod % divisor;
 						divisor = divisor / 10;
 					}
 					break;
 				default:
-					putchar_('%');
-					putchar_(*format);
+					putchars('%');
+					putchars(*format);
 					char_printed = char_printed + 2;
 					break;
 			}
 		}
 		else
 		{
-			putchar_(*format);
+			putchars(*format);
 			char_printed++;
 		}
 	}
