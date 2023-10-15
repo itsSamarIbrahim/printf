@@ -24,7 +24,9 @@ int printf_d_i(const char *format, ...)
 			switch (format[a + 1])
 			{
 
+				case 'i':
 				case 'd':
+					{
 					prod = va_arg(args, int);
 					if (prod < 0)
 					{
@@ -44,6 +46,7 @@ int printf_d_i(const char *format, ...)
 					}
 					a++;
 					break;
+					}
 				default:
 					putchars('%');
 					putchars(format[a + 1]);
