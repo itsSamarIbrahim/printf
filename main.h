@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-int _printf(const char *format, ...);
 void putchar_(char c);
+int _printf(const char *format, ...);
+int printf_d_i(const char *format, ...)
 
 #endif
