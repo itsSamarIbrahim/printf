@@ -25,7 +25,6 @@ int printf_d_i(const char *format, ...)
 			{
 
 				case 'd':
-				case 'i':
 					prod = va_arg(args, int);
 					if (prod < 0)
 					{
