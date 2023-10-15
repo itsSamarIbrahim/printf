@@ -15,12 +15,7 @@ int _printf(const char *format, ...)
 	va_start(alpha, format);
 	for (index = 0; format[index] != '\0'; index++)
 	{
-		if (format[index] != '%')
-		{
-			putchar_(format[index]);
-			alpha_length++;
-		}
-		else
+		if (format[index] == '%')
 		{
 			index++;
 			switch (format[index])
@@ -41,8 +36,13 @@ int _printf(const char *format, ...)
 					break;
 			}
 		}
+		else
+		{
+			putchar_(format[index]);
+			alpha_length++;
+		}
 	}
-
 	va_end(alpha);
+
 	return (alpha_length);
 }
