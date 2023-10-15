@@ -32,6 +32,7 @@ int printf_d_i(const char *format, ...)
 						{
 							putchars('-');
 							prod = -prod;
+							char_printed++;
 						}
 						while (prod / divisor > 9)
 						{
@@ -43,6 +44,7 @@ int printf_d_i(const char *format, ...)
 							putchars('0' + digit);
 							prod = prod % divisor;
 							divisor = divisor / 10;
+							char_printed++;
 						}
 						a++;
 						break;
