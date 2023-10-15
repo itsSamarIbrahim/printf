@@ -9,18 +9,18 @@
 int printf_d_i(const char *format, ...)
 {
 	va_list args;
-	int a = 0, char_printed = 0, prod, divisor = 1, digit;
+	int a, char_printed = 0, prod, divisor = 1, digit;
 
 	va_start(args, format);
-	for (; *format != '\0'; format++)
+	for (a = 0; *format != '\0'; format++)
 	{
 		if (*format == '%')
 		{
 			switch (format[a + 1])
 			{
 
-				case 'i':
 				case 'd':
+				case 'i':
 					prod = va_arg(args, int);
 					if (prod < 0)
 					{
