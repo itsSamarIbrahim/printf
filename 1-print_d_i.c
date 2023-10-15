@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 int putchars(char c)
-    {
-        return (putc(c, stdout));
-    }
+{
+	return (putc(c, stdout));
+}
 
 /**
  * printf_d_i - a function helps to print numbers with %d and %i specifiers
@@ -27,32 +27,34 @@ int printf_d_i(const char *format, ...)
 				case 'i':
 				case 'd':
 					{
-					prod = va_arg(args, int);
-					if (prod < 0)
-					{
-						putchars('-');
-						prod = -prod;
-					}
-					while (prod / divisor > 9)
-					{
-						divisor = divisor * 10;
-					}
-					while (divisor != 0)
-					{
-						digit = prod / divisor;
-						putchars('0' + digit);
-						prod = prod % divisor;
-						divisor = divisor / 10;
-					}
-					a++;
-					break;
+						prod = va_arg(args, int);
+						if (prod < 0)
+						{
+							putchars('-');
+							prod = -prod;
+						}
+						while (prod / divisor > 9)
+						{
+							divisor = divisor * 10;
+						}
+						while (divisor != 0)
+						{
+							digit = prod / divisor;
+							putchars('0' + digit);
+							prod = prod % divisor;
+							divisor = divisor / 10;
+						}
+						a++;
+						break;
 					}
 				default:
-					putchars('%');
-					putchars(format[a + 1]);
-					char_printed = char_printed + 2;
-					a++;
-					break;
+					{
+						putchars('%');
+						putchars(format[a + 1]);
+						char_printed = char_printed + 2;
+						a++;
+						break;
+					}
 			}
 		}
 		else
