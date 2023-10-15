@@ -42,17 +42,19 @@ int printf_d_i(const char *format, ...)
 						prod = prod % divisor;
 						divisor = divisor / 10;
 					}
+					a++;
 					break;
 				default:
 					putchars('%');
-					putchars(*format);
+					putchars(format[a + 1]);
 					char_printed = char_printed + 2;
+					a++;
 					break;
 			}
 		}
 		else
 		{
-			putchars(*format);
+			putchars(format[a]);
 			char_printed++;
 		}
 	}
