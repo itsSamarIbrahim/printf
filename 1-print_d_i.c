@@ -9,13 +9,7 @@
  */
 int putchars(char c)
 {
-	unsigned char unsigned_ch;
-
-	if (write(1, &c, 1) != 1)
-		return (EOF);
-
-	unsigned_ch = c;
-	return (unsigned_ch);
+	return (write(1, &c, 1));
 }
 
 /**
