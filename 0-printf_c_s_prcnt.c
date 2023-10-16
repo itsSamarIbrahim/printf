@@ -35,3 +35,17 @@ int _printf(const char *format, ...)
 
 	return (0);
 }
+
+int _strncmp(const char *firstString, const char *secondString, int maxNum)
+{
+	int i = 0;
+	while (i < maxNum)
+	{
+		if (firstString[i] != secondString[i])
+			return (firstString[i] - secondString[i]);
+		if (firstString[i] == '\0')
+			return (0);
+		i++;
+	}
+	return (0);
+}
