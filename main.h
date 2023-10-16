@@ -4,7 +4,6 @@
 #include <stdarg.h>
 
 void putchar_(char c);
-void putchars(char c);
 int _printf(const char *format, ...);
 int print_d_i(const char *format, ...);
 
