@@ -5,6 +5,6 @@
 
 int putchar_(char c);
 int _printf(const char *format, ...);
-int print_d_i(const char *format, ...);
+int printf_d_i(const char *format, ...);
 
 #endif
