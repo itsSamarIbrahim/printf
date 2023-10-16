@@ -9,12 +9,11 @@
  */
 void putchar_(char c)
 {
-	unsigned char unsigned_ch;
+	int index = 0;
 
-	if (write(1, &c, 1) != 1)
-		return EOF;
-	else
-		unsigned_ch = c;
-
-	return (unsigned_ch);
+	while (index < 1)
+	{
+		write (1, &c, 1);
+		index++;
+	}
 }
