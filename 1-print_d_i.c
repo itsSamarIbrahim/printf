@@ -9,14 +9,13 @@
  */
 void putchars(char c)
 {
-        unsigned char unsigned_ch;
+	unsigned char unsigned_ch;
 
-        if (write(1, &c, 1) != 1)
-                return (EOF);
+	if (write(1, &c, 1) != 1)
+		return (EOF);
 
-        unsigned_ch = c;
-        return (unsigned_ch);
-
+	unsigned_ch = c;
+	return (unsigned_ch);
 }
 
 /**
