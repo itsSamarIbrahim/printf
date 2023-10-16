@@ -13,7 +13,7 @@ int printf_d_i(const char *format, ...)
 	int a, char_printed = 0, prod, divisor = 1, digit;
 
 	va_start(args, format);
-	for (a = 0; format[a] != '\0'; a++)
+	for (a = 0; format[a] != '\0' && format != 0; a++)
 	{
 		if (format[a] == '%')
 		{
