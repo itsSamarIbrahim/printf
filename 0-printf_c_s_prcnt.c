@@ -22,8 +22,6 @@ int _printf(const char *format, ...)
 			{
 				case 's':
 					ptrStr = va_arg(alpha, char*);
-					if (!ptrStr)
-						ptrStr = "(nil)"
 					for (; *ptrStr; ptrStr++, alpha_length++)
 						putchar_(*ptrStr);
 					break;
