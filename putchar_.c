@@ -1,5 +1,6 @@
 #include "main.h"
 #include <unistd.h>
+#include <stdio.h>
 
 /**
  * putchar_ - an implementation for the real putchar function
@@ -8,11 +9,12 @@
  */
 void putchar_(char c)
 {
-	int index = 0;
+	unsigned char unsigned_ch;
 
-	while (index < 1)
-	{
-		write(1, &c, 1);
-		index++;
-	}
+	if (write(1, &c, 1) != 1)
+		return EOF;
+	else
+		unsigned_ch = c;
+
+	return (unsigned_ch);
 }
