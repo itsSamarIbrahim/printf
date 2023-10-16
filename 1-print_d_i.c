@@ -3,16 +3,6 @@
 #include <unistd.h>
 
 /**
- * putchars - an implementation for the real puthcar, help with(%d, i%)
- * @c: write this character for the stdout
- * Return: nothing - void
- */
-int putchars(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
  * printf_d_i - a function helps to print numbers with %d and %i specifiers
  * @format: a pointer to the string
  * Return: the number of characters printed
@@ -36,7 +26,7 @@ int printf_d_i(const char *format, ...)
 						prod = va_arg(args, int);
 						if (prod < 0)
 						{
-							putchars('-');
+							putchar_('-');
 							prod = -prod;
 							char_printed++;
 						}
@@ -47,7 +37,7 @@ int printf_d_i(const char *format, ...)
 						while (divisor != 0)
 						{
 							digit = prod / divisor;
-							putchars('0' + digit);
+							putchar_('0' + digit);
 							prod = prod % divisor;
 							divisor = divisor / 10;
 							char_printed++;
@@ -57,8 +47,8 @@ int printf_d_i(const char *format, ...)
 					}
 				default:
 					{
-						putchars('%');
-						putchars(format[a + 1]);
+						putchar_('%');
+						putchar_(format[a + 1]);
 						char_printed = char_printed + 2;
 						a++;
 						break;
@@ -67,7 +57,7 @@ int printf_d_i(const char *format, ...)
 		}
 		else
 		{
-			putchars(format[a]);
+			putchar_(format[a]);
 			char_printed++;
 		}
 	}
