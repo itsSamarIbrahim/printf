@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 			else if ('s' == format[index + 1] && '%' == format[index])
 			{
 				ptrStr = va_arg(printf, char *);
-				for (j = 0; ptrStr[j] != 0; j++; increment+=)
+				for (j = 0; ptrStr[j] != 0; j++; increment++)
 					putchar_(ptrStr[j]);
 				index++;
 			}
