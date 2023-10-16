@@ -8,41 +8,30 @@
  */
 int _printf(const char *format, ...)
 {
-	int alpha_length = 0, index, ch;
-	va_list alpha;
+	int index, store, j;
 	char *ptrStr;
+	va_list printf;
 
-	va_start(alpha, format);
-	for (index = 0; format[index] != '\0'; index++)
+	va_start(printf, format);
+	for (index = 0; format[index] != 0; index++)
 	{
-		if (format[index] == '%')
+		if (_strncmp(format + index, "%c", 2) == 0)
 		{
+			store = va_arg(printf, int);
+			putchar_(store);
 			index++;
-			switch (format[index])
-			{
-				case 's':
-					ptrStr = va_arg(alpha, char*);
-					for (; *ptrStr; ptrStr++, alpha_length++)
-						putchar_(*ptrStr);
-					break;
-				case '%':
-					putchar_('%');
-					alpha_length++;
-					break;
-				case 'c':
-					ch = (char) va_arg(alpha, int);
-					putchar_(ch);
-					alpha_length++;
-					break;
-			}
+		}
+		else if (_strncmp(format + index, "%s", 2) == 0)
+		{
+			ptrStr = va_arg(printf, char *);
+			for (j = 0; ptrStr[j] != 0; j++)
+				putchar_(ptrStr[j]);
+			index++;
 		}
 		else
-		{
 			putchar_(format[index]);
-			alpha_length++;
-		}
 	}
-	va_end(alpha);
+	va_end(printf);
 
-	return (alpha_length);
+	return (0);
 }
