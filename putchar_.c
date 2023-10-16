@@ -4,9 +4,9 @@
 /**
  * putchar_ - an implementation for the real putchar function
  * @c: write this character for the stdout
- * Return: nothing - void
+ * Return: 0
  */
-void putchar_(char c)
+int putchar_(char c)
 {
 	int index = 0;
 
@@ -15,4 +15,5 @@ void putchar_(char c)
 		write(1, &c, 1);
 		index++;
 	}
+	return (0);
 }
