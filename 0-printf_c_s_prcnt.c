@@ -8,7 +8,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int index, store, j;
+	int index = 0, store, j;
 	char *ptrStr;
 	va_list printf;
 
