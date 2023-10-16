@@ -15,13 +15,13 @@ int _printf(const char *format, ...)
 	va_start(printf, format);
 	for (index = 0; format[index] != 0; index++)
 	{
-		if (_strncmp(format + index, "%c", 2) == 0)
+		if ('c' == format[index + 1] && '%' == format[index])
 		{
 			store = va_arg(printf, int);
 			putchar_(store);
 			index++;
 		}
-		else if (_strncmp(format + index, "%s", 2) == 0)
+		else if ('s' == format[index + 1] && '%' == format[index])
 		{
 			ptrStr = va_arg(printf, char *);
 			for (j = 0; ptrStr[j] != 0; j++)
@@ -33,19 +33,5 @@ int _printf(const char *format, ...)
 	}
 	va_end(printf);
 
-	return (0);
-}
-
-int _strncmp(const char *firstString, const char *secondString, int maxNum)
-{
-	int i = 0;
-	while (i < maxNum)
-	{
-		if (firstString[i] != secondString[i])
-			return (firstString[i] - secondString[i]);
-		if (firstString[i] == '\0')
-			return (0);
-		i++;
-	}
 	return (0);
 }
