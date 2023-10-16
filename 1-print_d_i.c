@@ -1,11 +1,6 @@
 #include "main.h"
 #include <stdio.h>
 
-int putchars(char c)
-{
-	return (putc(c, stdout));
-}
-
 /**
  * printf_d_i - a function helps to print numbers with %d and %i specifiers
  * @format: a pointer to the string
