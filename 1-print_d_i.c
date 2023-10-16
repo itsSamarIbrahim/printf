@@ -7,7 +7,7 @@
  * @c: write this character for the stdout
  * Return: nothing - void
  */
-void putchars(char c)
+int putchars(char c)
 {
 	unsigned char unsigned_ch;
 
