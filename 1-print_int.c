@@ -22,7 +22,7 @@ int print_int(va_list args)
 		_putchar('-');
 		digitCount = digitCount + _putchar(48);
 	}
-	while (value / divisor >= 10)
+	while (value / divisor > 9)
 	{
 		divisor = divisor * 10;
 	}
