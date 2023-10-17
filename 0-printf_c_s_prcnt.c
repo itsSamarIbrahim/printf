@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdarg.h>
-#include <stdlib.h>
 
 /**
  * _printf - implementing the %s and %c from the real printf function
@@ -9,7 +8,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int index = 0, store, increment = 0;
+	int index = 0, store, j, increment = 0;
 	char *ptrStr;
 	va_list printf;
 
@@ -20,15 +19,17 @@ int _printf(const char *format, ...)
 		{
 			if ('c' == format[index + 1])
 			{
-				putchar_(va_arg(printf, int));
+				store = va_arg(printf, int);
+				putchar_(store);
 				increment++;
 				index++;
 			}
 			else if ('s' == format[index + 1])
 			{
-				for (*ptrStr = va_arg(args, char *); *ptrStr != '\0'; ptrStr++)
+				ptrStr = va_arg(printf, char *);
+				for (j = 0; ptrStr[j] != 0; j++)
 				{
-					putchar_(*ptrStr);
+					putchar_(ptrStr[j]);
 					increment++;
 				}
 				index++;
@@ -40,7 +41,6 @@ int _printf(const char *format, ...)
 				increment += 2;
 				index++;
 			}
-			++i;
 		}
 		else
 		{
