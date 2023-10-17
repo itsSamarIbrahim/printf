@@ -16,16 +16,16 @@ int _printf(const char *format, ...)
 	va_start(printf, format);
 	for (index = 0; format[index] != 0; ++index)
 	{
-		if (format[index + 1] != 0 && '%' == format[index])
+		if (format[index] != 0 && '%' == format[index])
 		{
-			if ('c' == format[index + 1])
+			if ('c' == format[index])
 			{
 				store = va_arg(printf, int);
 				putchar_(store);
 				increment++;
 				index++;
 			}
-			else if ('s' == format[index + 1])
+			else if ('s' == format[index])
 			{
 				ptrStr = va_arg(printf, char *);
 				for (j = 0; ptrStr[j] != 0; j++)
@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				putchar_('%');
-				putchar_(format[index + 1]);
+				putchar_(format[index]);
 				increment += 2;
 				index++;
 			}
