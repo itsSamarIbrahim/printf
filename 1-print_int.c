@@ -7,10 +7,15 @@
  */
 int print_int(va_list args)
 {
-	int value, divisor = 1, digit;
+	int value, divisor = 1, digit, digitCount = 0;
 
 	value = va_arg(args, int);
 
+	if (value == 0)
+	{
+		_putchar('0');
+		return 1;
+	}
 	if (value < 0)
 	{
 		value = -value;
@@ -26,7 +31,8 @@ int print_int(va_list args)
 		_putchar(48 + digit);
 		value = value % divisor;
 		divisor = divisor / 10;
+		digitCount++;
 	}
 
-	return (divisor);
+	return (digitCount++);
 }
