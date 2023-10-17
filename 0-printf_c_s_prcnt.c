@@ -5,7 +5,7 @@
  * @format: this is a character string
  * Return: the number of character printed (alpha_length)
  */
-int _printf(const char *format, ...)
+int printf_c_s_prcnt(const char *format, ...)
 {
 	int index = 0, store, j, increment = 0;
 	char *ptrStr;
