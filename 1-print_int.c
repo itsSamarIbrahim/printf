@@ -16,7 +16,7 @@ int print_int(va_list args)
 		value = -value;
 		_putchar('-');
 	}
-	while (value / divisor >= 10)
+	while (divisor <= value / 10)
 	{
 		divisor = divisor * 10;
 	}
