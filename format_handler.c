@@ -1,7 +1,11 @@
 #include "main.h"
 
 /**
- *
+ * format_handler - an implementation of a function that takes a format string
+ * @format: a pointer to a string
+ * @funcs_list: a list of the functions
+ * @args: arguments' list
+ * Return: the number of the characters (ON SUCCESS) or -1 (ON FAILURE)
  */
 int format_handler(const char *format, conversion funcs_list[], va_list args)
 {

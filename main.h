@@ -5,6 +5,11 @@
 #include <stdio.h>
 #include <unistd.h>
 
+/**
+ * struct conversion - performs actions related to a specific operator
+ * @operators: a pointer to a character
+ * @func: a function pointer
+ */
 typedef struct conversion
 {
 	char *operators;
