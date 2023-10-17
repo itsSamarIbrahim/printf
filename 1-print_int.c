@@ -8,6 +8,7 @@
 int print_int(va_list args)
 {
 	int value, divisor = 1, digit, digitCount = 0;
+	unsigned int number;
 
 	value = va_arg(args, int);
 
@@ -21,8 +22,10 @@ int print_int(va_list args)
 		value = -value;
 		/*_putchar('-');*/
 		digitCount = digitCount + _putchar('-');
-		/*number = (-1) * value;*/
+		number = (-1) * value;
 	}
+	else
+		number = value;
 	while (value / divisor > 9)
 		divisor = divisor * 10;
 	while (divisor > 0)
