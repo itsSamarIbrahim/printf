@@ -21,7 +21,7 @@ int print_int(va_list args)
 	{
 		value = -value;
 		_putchar('-');
-		digitCount = digitCount + _putchar(45);
+		digitCount = digitCount + _putchar(48);
 		/*number = (-1) * value;*/
 	}
 	else
