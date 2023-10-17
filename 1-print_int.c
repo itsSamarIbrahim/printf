@@ -26,7 +26,7 @@ int print_int(va_list args)
 	{
 		divisor = divisor * 10;
 	}
-	while (divisor > 0)
+	while (divisor != 0)
 	{
 		digit = value / divisor;
 		_putchar(48 + digit);
