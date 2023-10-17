@@ -19,10 +19,10 @@ int print_int(va_list args)
 	}
 	if (value < 0)
 	{
-		/*value = -value;*/
+		value = -value;
 		_putchar('-');
 		digitCount = digitCount + _putchar(45);
-		number = (-1) * value;
+		/*number = (-1) * value;*/
 	}
 	else
 		number = value;
