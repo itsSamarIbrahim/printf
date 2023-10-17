@@ -14,13 +14,13 @@ int print_int(va_list args)
 	if (value == 0)
 	{
 		_putchar('0');
-		return 1;
+		return (1);
 	}
 	if (value < 0)
 	{
 		value = -value;
 		_putchar('-');
-		digitCount = digitCount + _putchar(48);
+		digitCount = digitCount + _putchar('-');
 		/*number = (-1) * value;*/
 	}
 	while (value / divisor > 9)
