@@ -11,6 +11,8 @@ int _printf(const char *format, ...)
 	char *ptrStr;
 	va_list printf;
 
+	if (!format)
+		return (-1);
 	va_start(printf, format);
 	for (index = 0; format[index] != 0; ++index)
 	{
