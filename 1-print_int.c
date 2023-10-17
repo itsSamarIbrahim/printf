@@ -19,11 +19,17 @@ int print_int(va_list args)
 	}
 	if (value < 0)
 	{
-		value = -value;
 		/*_putchar('-');*/
 		digitCount = digitCount + _putchar('-');
 		/*number = (-1) * value;*/
+		if (value == INT_MIN)
+		{
+			_putchar('2');
+			value = 147483648;
+		}
 	}
+	else
+		value = -value;
 	while (value / divisor > 9)
 		divisor = divisor * 10;
 	while (divisor > 0)
