@@ -20,6 +20,7 @@ int print_int(va_list args)
 	{
 		value = -value;
 		_putchar('-');
+		digitCount = digitCount + _putchar(48);
 	}
 	while (divisor <= value / 10)
 	{
