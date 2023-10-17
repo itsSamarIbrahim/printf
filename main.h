@@ -7,6 +7,6 @@
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int printf_d_i(const char *format, ...);
+int print_int(va_list args);
 
 #endif
