@@ -19,5 +19,6 @@ int print_int(va_list args);
 int print_char(va_list args);
 int print_str(va_list args);
 int print_percent(__attribute__((unused))va_list args);
+int _strlen(const char *str);
 
 #endif
