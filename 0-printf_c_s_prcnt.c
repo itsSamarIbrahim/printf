@@ -16,36 +16,36 @@ int _printf(const char *format, ...)
 	va_start(printf, format);
 	for (index = 0; format[index] != 0; ++index)
 	{
-		if (format[index] != 0 && '%' == format[index])
+		if (format[index + 1] != 0 && '%' == format[index])
 		{
-			if ('c' == format[index])
+			if ('c' == format[index + 1])
 			{
 				store = va_arg(printf, int);
-				putchar_(store);
+				_putchar(store);
 				increment++;
 				index++;
 			}
-			else if ('s' == format[index])
+			else if ('s' == format[index + 1])
 			{
 				ptrStr = va_arg(printf, char *);
-				for (j = 0; ptrStr[j] != 0; j++)
+				for (j = 0; ptrStr[j] != '\0'; j++)
 				{
-					putchar_(ptrStr[j]);
+					_putchar(ptrStr[j]);
 					increment++;
 				}
 				index++;
 			}
 			else
 			{
-				putchar_('%');
-				putchar_(format[index]);
+				_putchar('%');
+				_putchar(format[index + 1]);
 				increment += 2;
 				index++;
 			}
 		}
 		else
 		{
-			putchar_(format[index]);
+			_putchar(format[index]);
 			increment++;
 		}
 	}
