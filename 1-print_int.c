@@ -7,7 +7,8 @@
  */
 int print_int(va_list args)
 {
-	int value, divisor = 1, digit, digitCount = 0;
+	int digit, digitCount = 0;
+	long long value, divisor = 1;
 
 	value = va_arg(args, int);
 
