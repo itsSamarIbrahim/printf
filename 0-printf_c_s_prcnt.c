@@ -18,38 +18,52 @@ int _printf(const char *format, ...)
 	{
 		if (format[index + 1] != 0 && '%' == format[index])
 		{
-			if ('c' == format[index + 1])
+			if (format[index + 1] != 0 && '%' == format[index])
 			{
-				store = va_arg(printf, int);
-				putchar_(store);
-				increment++;
-				index++;
-			}
-			else if ('s' == format[index + 1])
-			{
-				ptrStr = va_arg(printf, char *);
-				for (j = 0; ptrStr[j] != 0; j++)
+				if ('c' == format[index + 1])
 				{
-					putchar_(ptrStr[j]);
+					store = va_arg(printf, int);
+					if (putchar_(store) == EOF)
+						return (EOF);
 					increment++;
+					index++;
 				}
-				index++;
+				else if ('s' == format[index + 1])
+				{
+					ptrStr = va_arg(printf, char *);
+					for (j = 0; ptrStr[j] != 0; j++)
+					{
+						if (putchar_(ptrStr[j]) == EOF)
+							return (EOF);
+						increment++;
+					}
+					index++;
+				}
+				else if ('%' == format[index + 1])
+				{
+					if (putchar_('%') == EOF)
+						return (EOF);
+					putchar_(format[index + 1]);
+					increment += 2;
+					index++;
+				}
+				else
+				{
+					if (putchar_('%') == EOF || putchar_(format[index + 1]) == EOF)
+						return EOF;
+					increment += 2;
+					index++;
+				}
 			}
 			else
 			{
-				putchar_('%');
-				putchar_(format[index + 1]);
-				increment += 2;
-				index++;
+				if (putchar_(format[index]) == EOF)
+					return EOF;
+				increment++;
 			}
 		}
-		else
-		{
-			putchar_(format[index]);
-			increment++;
-		}
-	}
-	va_end(printf);
+		va_end(printf);
 
-	return (increment);
+		return (increment);
+	}
 }
