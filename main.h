@@ -7,8 +7,8 @@
 
 typedef struct conversion
 {
-        char *operators;
-        int (*func)(va_list);
+	char *operators;
+	int (*func)(va_list);
 } conversion;
 
 int _putchar(char c);
