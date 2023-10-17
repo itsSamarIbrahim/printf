@@ -21,14 +21,6 @@ int print_int(va_list args)
 		/*_putchar('-');*/
 		digitCount = digitCount + _putchar('-');
 		/*number = (-1) * value;*/
-		if (value == INT_MIN)
-		{
-			_putchar('2');
-			value = 147483648;
-		}
-	}
-	else
-	{
 		value = -value;
 	}
 	while (value / divisor > 9)
