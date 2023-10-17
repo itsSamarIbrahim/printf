@@ -19,7 +19,7 @@ int print_int(va_list args)
 	if (value < 0)
 	{
 		value = -value;
-		_putchar('-');
+		/*_putchar('-');*/
 		digitCount = digitCount + _putchar('-');
 		/*number = (-1) * value;*/
 	}
