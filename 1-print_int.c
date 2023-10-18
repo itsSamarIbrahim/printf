@@ -1,37 +1,46 @@
 #include "main.h"
 
 /**
- * print_int - a function to print integers
+ * print_number - a function helps to print a number
  * @args: arguments' list
- * Return: divisor
+ * Return: the count of the digits
+ */
+int print_number(va_list args)
+{
+	int digitCount;
+
+	digitCount = print_number(list);
+	return (digitCount);
+}
+
+/**
+ * print_int - a function helps to print an integer
+ * @args: arguments' list
+ * Return: the count of the digits
  */
 int print_int(va_list args)
 {
-	int value, divisor = 1, digit, digitCount = 0;
+	int value, divisor = 1, digitCount = 0;
+	unsigned int number;
 
 	value = va_arg(args, int);
 
-	if (value == 0)
-	{
-		_putchar('0');
-		return (1);
-	}
 	if (value < 0)
 	{
-		/*_putchar('-');*/
-		digitCount = digitCount + _putchar('-');
-		/*number = (-1) * value;*/
-		value = -value;
+		digitCount += _putchar('-');
+		number = value * -1;
 	}
-	while (value / divisor > 9)
+	else
+		number = value;
+
+	while (number / divisor > 9)
 		divisor = divisor * 10;
-	while (divisor > 0)
+
+	while (divisor != 0)
 	{
-		digit = value / divisor;
-		_putchar('0' + digit);
-		value = value % divisor;
+		digitCount += _putchar('0' + number / divisor);
+		number = number % divisor;
 		divisor = divisor / 10;
-		digitCount++;
 	}
 
 	return (digitCount);
