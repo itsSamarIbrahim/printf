@@ -2,7 +2,6 @@
 
 /**
  * _printf - implementing the %s and %c from the real printf function
- * @format: this is a character string
  */
 /* int printf_c_s_prcnt(const char *format, ...)
 {
