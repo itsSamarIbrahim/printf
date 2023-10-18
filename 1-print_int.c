@@ -11,6 +11,11 @@ int print_int(va_list args)
 	unsigned int number;
 
 	value = va_arg(args, int);
+	if (value == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	if (value < 0)
 	{
 		digitCount += _putchar('-');
@@ -20,7 +25,7 @@ int print_int(va_list args)
 		number = value;
 	while (number / divisor > 9)
 		divisor *= 10;
-	while (divisor != 0)
+	while (divisor > 0)
 	{
 		digitCount += _putchar('0' + number / divisor);
 		number %= divisor;
