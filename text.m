@@ -6,7 +6,6 @@
 	{
 		{
 			{
-				_putchar(store);
 				increment++;
 				index++;
 			}
