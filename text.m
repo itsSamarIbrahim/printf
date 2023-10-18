@@ -4,7 +4,6 @@
 	va_list printf;
 
 	{
-		if (format[index + 1] != 0 && '%' == format[index])
 		{
 			if ('c' == format[index + 1])
 			{
