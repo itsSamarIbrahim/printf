@@ -1,7 +1,6 @@
 #include "main.h"
 
 /**
- * _printf - implementing the %s and %c from the real printf function
  */
 /* int printf_c_s_prcnt(const char *format, ...)
 {
