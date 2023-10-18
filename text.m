@@ -1,7 +1,6 @@
 
 /*{
 	int index = 0, store, j, increment = 0;
-	char *ptrStr;
 	va_list printf;
 
 	if (!format)
