@@ -3,7 +3,6 @@
 	int index = 0, store, j, increment = 0;
 	va_list printf;
 
-	for (index = 0; format[index] != 0; ++index)
 	{
 		if (format[index + 1] != 0 && '%' == format[index])
 		{
