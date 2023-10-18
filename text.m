@@ -6,8 +6,6 @@
 	{
 		{
 			{
-			}
-		}
 		else
 		{
 			_putchar(format[index]);
