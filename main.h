@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
+#define BUFFER_SIZE 1024
+
 /**
  * struct conversion - performs actions related to a specific operator
  * @operators: a pointer to a character
