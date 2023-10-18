@@ -1,4 +1,3 @@
-#include "main.h"
 
 /* int printf_c_s_prcnt(const char *format, ...)
 {
