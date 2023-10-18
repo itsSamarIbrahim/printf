@@ -1,19 +1,6 @@
 #include "main.h"
 
 /**
- * print_number - a function helps to print a number
- * @args: arguments' list
- * Return: the count of the digits
- */
-int print_number(va_list args)
-{
-	int digitCount;
-
-	digitCount = print_number(list);
-	return (digitCount);
-}
-
-/**
  * print_int - a function helps to print an integer
  * @args: arguments' list
  * Return: the count of the digits
