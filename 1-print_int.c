@@ -19,12 +19,12 @@ int print_int(va_list args)
 	else
 		number = value;
 	while (number / divisor > 9)
-		divisor = divisor * 10;
+		divisor *= 10;
 	while (divisor != 0)
 	{
 		digitCount += _putchar('0' + number / divisor);
-		number = number % divisor;
-		divisor = divisor / 10;
+		number %= divisor;
+		divisor /= 10;
 	}
 
 	return (digitCount);
