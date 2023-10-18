@@ -5,7 +5,6 @@
 
 	{
 		{
-			if ('c' == format[index + 1])
 			{
 				store = va_arg(printf, int);
 				_putchar(store);
