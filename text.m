@@ -3,7 +3,6 @@
 	int index = 0, store, j, increment = 0;
 	va_list printf;
 
-	if (!format)
 		return (-1);
 	va_start(printf, format);
 	for (index = 0; format[index] != 0; ++index)
