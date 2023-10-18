@@ -6,25 +6,6 @@
 	{
 		{
 			{
-				increment++;
-				index++;
-			}
-			else if ('s' == format[index + 1])
-			{
-				ptrStr = va_arg(printf, char *);
-				for (j = 0; ptrStr[j] != '\0'; j++)
-				{
-					_putchar(ptrStr[j]);
-					increment++;
-				}
-				index++;
-			}
-			else
-			{
-				_putchar('%');
-				_putchar(format[index + 1]);
-				increment += 2;
-				index++;
 			}
 		}
 		else
