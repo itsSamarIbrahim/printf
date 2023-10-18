@@ -3,7 +3,7 @@
 /**
  * print_int - a function to print integers
  * @args: arguments' list
- * Return: divisor
+ * Return: the count of the digits
  */
 int print_int(va_list args)
 {
