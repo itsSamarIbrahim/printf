@@ -6,7 +6,6 @@
 	{
 		{
 			{
-				store = va_arg(printf, int);
 				_putchar(store);
 				increment++;
 				index++;
