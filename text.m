@@ -6,8 +6,6 @@
 	{
 		{
 			{
-	}
-	va_end(printf);
 
 	return (increment);
 }*/
