@@ -4,5 +4,3 @@
 	va_list printf;
 
 	{
-		{
-			{
