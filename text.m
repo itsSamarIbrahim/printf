@@ -6,7 +6,6 @@
 	{
 		{
 			{
-			_putchar(format[index]);
 			increment++;
 		}
 	}
